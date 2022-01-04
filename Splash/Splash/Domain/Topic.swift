@@ -8,8 +8,7 @@
 import Foundation
 
 enum Topic: String, CaseIterable {
-    case editorial
-    case following
+    case holidays
     case blockchain
     case wallpapers
     case architecture
@@ -18,6 +17,8 @@ enum Topic: String, CaseIterable {
     case fashion
     case film
     case people
+    case travel
+    case history
 
     var string: String {
         return self.rawValue
