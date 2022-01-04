@@ -13,7 +13,7 @@ enum NetworkError: Error {
     case noData
 }
 
-struct NetworkService {
+struct NetworkService: Networkable {
     func request(_ urlRequest: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
