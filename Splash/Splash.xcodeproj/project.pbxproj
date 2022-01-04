@@ -12,6 +12,7 @@
 		1F74CA9A278435D600DC5B4B /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74CA99278435D600DC5B4B /* Topic.swift */; };
 		1F74CA9D2784360D00DC5B4B /* SplashEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74CA9C2784360D00DC5B4B /* SplashEndpoint.swift */; };
 		1F74CA9F278438DD00DC5B4B /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74CA9E278438DD00DC5B4B /* TransferService.swift */; };
+		1F74CAA127843A6600DC5B4B /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74CAA027843A6600DC5B4B /* Secrets.swift */; };
 		1FAF5166278037E2009036F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF5165278037E2009036F9 /* AppDelegate.swift */; };
 		1FAF5168278037E2009036F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF5167278037E2009036F9 /* SceneDelegate.swift */; };
 		1FAF516A278037E2009036F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF5169278037E2009036F9 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		1F74CA99278435D600DC5B4B /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		1F74CA9C2784360D00DC5B4B /* SplashEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashEndpoint.swift; sourceTree = "<group>"; };
 		1F74CA9E278438DD00DC5B4B /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
+		1F74CAA027843A6600DC5B4B /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		1FAF5162278037E2009036F9 /* Splash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAF5165278037E2009036F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FAF5167278037E2009036F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		1F74CAA227843AA500DC5B4B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1F74CAA027843A6600DC5B4B /* Secrets.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		1FA1884D278039B80021500A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 			children = (
 				1FA1884D278039B80021500A /* Supporting Files */,
 				1FAF5169278037E2009036F9 /* ViewController.swift */,
+				1F74CAA227843AA500DC5B4B /* Common */,
 				1F74CA9B278435DE00DC5B4B /* Domain */,
 				1F74CA952784336500DC5B4B /* Infrastructure */,
 				1FAF516B278037E2009036F9 /* Main.storyboard */,
@@ -205,6 +216,7 @@
 				1F74CA942784330F00DC5B4B /* NetworkService.swift in Sources */,
 				1FAF5168278037E2009036F9 /* SceneDelegate.swift in Sources */,
 				1F74CA9F278438DD00DC5B4B /* TransferService.swift in Sources */,
+				1F74CAA127843A6600DC5B4B /* Secrets.swift in Sources */,
 				1F74CA972784354300DC5B4B /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
