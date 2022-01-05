@@ -1,5 +1,5 @@
 //
-//  Photo.swift
+//  PhotoInformation.swift
 //  Splash
 //
 //  Created by TakHyun Jung on 2022/01/04.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Photo: Codable, Hashable {
+struct PhotoInformation: Codable, Hashable {
     var id: String
     var desctiption: String?
     var urls: URLs
@@ -17,7 +17,7 @@ struct Photo: Codable, Hashable {
         hasher.combine(id)
     }
     
-    static func == (lhs: Photo, rhs: Photo) -> Bool {
+    static func == (lhs: PhotoInformation, rhs: PhotoInformation) -> Bool {
         return lhs.id == rhs.id
     }
 }
