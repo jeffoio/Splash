@@ -11,6 +11,7 @@ struct Photo: Codable, Hashable {
     var id: String
     var desctiption: String?
     var urls: URLs
+    var user: User
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -26,4 +27,8 @@ struct URLs: Codable {
     var full: String
     var small: String
     var thumb: String
+}
+
+struct User: Codable {
+    var name: String
 }
