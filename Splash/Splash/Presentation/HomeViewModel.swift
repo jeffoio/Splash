@@ -39,6 +39,7 @@ final class HomeViewModel {
     func update(_ topic: Topic) {
         guard self.currentTopic != topic else { return }
         self.currentTopic = topic
+        self.photos.value = []
         self.page = 1
         self.fetch()
     }
