@@ -1,5 +1,5 @@
 //
-//  PhotoInformationUsecase.swift
+//  TopicPhotoInformationUsecase.swift
 //  Splash
 //
 //  Created by TakHyun Jung on 2022/01/05.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol PhotoInformationRepositoryInterface {
+protocol TopicPhotoInformationRepositoryInterface {
     func fetch(topic: Topic, page: Int ,completion: @escaping (Result<[PhotoInformation], Error>) -> Void)
 }
 
-final class PhotoInformationUsecase: PhotoInformationUsecaseInterface {
-    private let repository: PhotoInformationRepositoryInterface
+final class TopicPhotoInformationUsecase: TopicPhotoInformationUsecaseInterface {
+    private let repository: TopicPhotoInformationRepositoryInterface
     
-    init(repository: PhotoInformationRepositoryInterface) {
+    init(repository: TopicPhotoInformationRepositoryInterface) {
         self.repository = repository
     }
     

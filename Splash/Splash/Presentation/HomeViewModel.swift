@@ -7,17 +7,17 @@
 
 import Foundation
 
-protocol PhotoInformationUsecaseInterface {
+protocol TopicPhotoInformationUsecaseInterface {
     func fetch(topic: Topic, page: Int ,completion: @escaping (Result<[PhotoInformation], Error>) -> Void)
 }
 
 final class HomeViewModel {
-    private let usecase: PhotoInformationUsecaseInterface
+    private let usecase: TopicPhotoInformationUsecaseInterface
     private var currentTopic: Topic
     private var page: Int
     private(set) var photos: Observable<[PhotoInformation]>
     
-    init(usecase: PhotoInformationUsecaseInterface) {
+    init(usecase: TopicPhotoInformationUsecaseInterface) {
         self.usecase = usecase
         self.currentTopic = .holidays
         self.page = 1

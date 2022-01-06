@@ -17,7 +17,7 @@ protocol Networkable {
     func request(_ urlRequest: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
-struct TransferService: Transferable {
+struct TransferService {
     private let networkService: Networkable
 
     init(networkService: Networkable) {
