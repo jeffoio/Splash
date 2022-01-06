@@ -14,7 +14,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Splash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Splash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BSZ-cd-k0m">
-                                <rect key="frame" x="16" y="115" width="382" height="32"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Z1K-fh-ulP"/>
@@ -69,7 +69,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tBB-Jg-Lqu">
-                                <rect key="frame" x="0.0" y="170" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="692"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ibK-h7-gtu">
                                     <size key="itemSize" width="371" height="274"/>
@@ -94,10 +94,10 @@
                         <color key="backgroundColor" name="splashBlack"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tBB-Jg-Lqu" secondAttribute="bottom" id="0pv-PX-OVP"/>
-                            <constraint firstItem="BSZ-cd-k0m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6b9-RY-xas"/>
+                            <constraint firstItem="BSZ-cd-k0m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6b9-RY-xas"/>
                             <constraint firstItem="BSZ-cd-k0m" firstAttribute="top" secondItem="dXc-2c-o5w" secondAttribute="bottom" constant="23" id="EpX-81-GHj"/>
                             <constraint firstItem="tBB-Jg-Lqu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gpf-AV-eJD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BSZ-cd-k0m" secondAttribute="trailing" constant="16" id="hbx-ph-INM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BSZ-cd-k0m" secondAttribute="trailing" id="hbx-ph-INM"/>
                             <constraint firstItem="dXc-2c-o5w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kIJ-YM-C3n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tBB-Jg-Lqu" secondAttribute="trailing" id="qKg-AF-9IW"/>
                             <constraint firstItem="tBB-Jg-Lqu" firstAttribute="top" secondItem="BSZ-cd-k0m" secondAttribute="bottom" constant="23" id="r9x-cn-f3v"/>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1264" y="89"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="kW8-hC-3ML">
@@ -189,7 +189,7 @@
         <!--Discover-->
         <scene sceneID="57h-Dc-1GU">
             <objects>
-                <viewController id="MWX-Ss-kbC" customClass="DiscoverViewController" customModule="Splash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiscoverViewController" id="MWX-Ss-kbC" customClass="DiscoverViewController" customModule="Splash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I6Q-df-IpE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +205,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IKg-H3-Qvz">
-                                <rect key="frame" x="0.0" y="189" width="414" height="624"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="673"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HSA-vs-8rH">
                                     <size key="itemSize" width="382" height="295"/>
@@ -250,12 +250,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eor-FP-oqR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="814"/>
+            <point key="canvasLocation" x="1264" y="843"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="XjI-Nw-9KG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hAk-fZ-W16" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hAk-fZ-W16" customClass="MainTabBarController" customModule="Splash" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lCq-Mg-vCT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -267,10 +267,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1Mr-QE-xXD"/>
-                        <segue destination="MWX-Ss-kbC" kind="relationship" relationship="viewControllers" id="kPA-2C-7Z2"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVT-k3-zcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

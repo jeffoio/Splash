@@ -8,6 +8,8 @@
 import UIKit
 
 class DiscoverViewController: UIViewController {
+    static let identifider: String = String(describing: DiscoverViewController.self)
+    
     enum Section {
         case photos
     }
@@ -15,20 +17,21 @@ class DiscoverViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var photoCollectionView: UICollectionView!
     
-    private var viewModel: DiscoverViewModel!
+    private var viewModel: DiscoverViewModel
     private var photoDataSource: UICollectionViewDiffableDataSource<Section, PhotoInformation>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.inject()
         self.configure()
     }
     
-    func inject() {
-        let service = TransferService(networkService: NetworkService())
-        let repo = QueryPhotoInformationRepository(service: service)
-        let usecase = QueryPhotoInformationUsecase(repository: repo)
-        self.viewModel = DiscoverViewModel(usecase: usecase)
+    init?(coder: NSCoder, viewModel: DiscoverViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func showDetail(indexPath: IndexPath) {

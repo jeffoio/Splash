@@ -8,6 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    static let identifider: String = String(describing: HomeViewController.self)
+    
     enum Section {
         case topics
         case photos
@@ -16,22 +18,22 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var topicCollectionView: UICollectionView!
     @IBOutlet private weak var photoCollectionView: UICollectionView!
     
-    private var viewModel: HomeViewModel!
+    private var viewModel: HomeViewModel
     private var topicDataSource: UICollectionViewDiffableDataSource<Section, Topic>?
     private var photoDataSource: UICollectionViewDiffableDataSource<Section, PhotoInformation>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.inject()
         self.configure()
-        self.viewModel.fetch()
     }
     
-    func inject() {
-        let service = TransferService(networkService: NetworkService())
-        let repo = TopicPhotoInformationRepository(service: service)
-        let usecase = TopicPhotoInformationUsecase(repository: repo)
-        self.viewModel = HomeViewModel(usecase: usecase)
+    init?(coder: NSCoder, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func topicButtonTapped(_ sender: UIButton) {
@@ -110,7 +112,7 @@ private extension HomeViewController {
     func configureTopicDataSource() {
         self.topicDataSource = UICollectionViewDiffableDataSource<Section, Topic>(collectionView: self.topicCollectionView, cellProvider: { collectionView, indexPath, topic in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopicCell.identifider, for: indexPath) as? TopicCell else { return TopicCell() }
-            cell.button.setTitle(topic.string, for: .normal)
+            cell.button.setTitle(topic.title, for: .normal)
             cell.button.addTarget(self, action: #selector(self.topicButtonTapped), for: .touchUpInside)
             return cell
         })

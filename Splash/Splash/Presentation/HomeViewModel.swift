@@ -22,6 +22,7 @@ final class HomeViewModel {
         self.currentTopic = .holidays
         self.page = 1
         self.photos = Observable([])
+        self.fetch()
     }
     
     func fetch() {
