@@ -18,4 +18,9 @@ class PhotoCell: UICollectionViewCell {
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.clipsToBounds = true
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imageView.image = nil
+    }
 }
