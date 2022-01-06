@@ -27,6 +27,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
+        self.delegate = self
     }
     
     func configure() {
@@ -54,5 +55,10 @@ class MainTabBarController: UITabBarController {
         discoverViewController.tabBarItem = discoverBarItem
         self.viewControllers = [homeViewController, discoverViewController]
     }
+}
 
+extension MainTabBarController: UITabBarControllerDelegate {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        PhotoLoader.shared.cancelAllOperation()
+    }
 }

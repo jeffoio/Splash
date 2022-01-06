@@ -46,7 +46,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.configure()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         guard needsDelayedScrolling else { return }
@@ -74,6 +74,10 @@ extension DetailViewController: UICollectionViewDelegate {
             self.backButton.isHidden.toggle()
             self.titleLabel.isHidden.toggle()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        PhotoLoader.shared.cancelOperation(indexPath)
     }
 }
 
@@ -105,7 +109,7 @@ private extension DetailViewController {
     func configurePhotoDataSource() {
         self.photoDataSource = UICollectionViewDiffableDataSource<Section, PhotoInformation>(collectionView: self.photoCollectionView, cellProvider: { collectionView, indexPath, photo in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargePhotoCell.identifider, for: indexPath) as? LargePhotoCell else { return LargePhotoCell() }
-            cell.setImage(photo)
+            cell.setImage(indexPath, photo: photo)
             return cell
         })
         

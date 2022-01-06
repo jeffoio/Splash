@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIImageView {
-    func setImageUrl(id: String, url: URL) -> Cancelable? {
-        return PhotoLoader.shared.download(url: url, id: id) { data in
+    func setImageUrl(id: String, url: URL, indexPath: IndexPath) {
+        PhotoLoader.shared.download(url: url, id: id, indexPath: indexPath) { data in
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
                 self.removeBlurEffect()

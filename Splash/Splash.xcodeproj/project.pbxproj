@@ -41,7 +41,8 @@
 		1FD3282F27858010005B1150 /* TopicPhotoInformationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3282E27858010005B1150 /* TopicPhotoInformationUsecase.swift */; };
 		1FE7D48627873B85001737D3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D48527873B85001737D3 /* MainTabBarController.swift */; };
 		1FE7D488278741B6001737D3 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D487278741B6001737D3 /* String+Extenstion.swift */; };
-		1FE7D48A278743D2001737D3 /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D489278743D2001737D3 /* Cancelable.swift */; };
+		1FE7D48C27876156001737D3 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D48B27876156001737D3 /* AsyncOperation.swift */; };
+		1FE7D48E27876298001737D3 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D48D27876298001737D3 /* ImageOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +82,8 @@
 		1FD3282E27858010005B1150 /* TopicPhotoInformationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicPhotoInformationUsecase.swift; sourceTree = "<group>"; };
 		1FE7D48527873B85001737D3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1FE7D487278741B6001737D3 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
-		1FE7D489278743D2001737D3 /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
+		1FE7D48B27876156001737D3 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		1FE7D48D27876298001737D3 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,14 @@
 			children = (
 				1FA5770427858D620058D907 /* TopicPhotoInformationRepository.swift */,
 				1F94B2A52786B1AA0037D8BF /* QueryPhotoInformationRepository.swift */,
+				1F8F31F727860D8E00C516E1 /* QueryResult.swift */,
 				1F74CA9E278438DD00DC5B4B /* TransferService.swift */,
 				1F74CA932784330F00DC5B4B /* NetworkService.swift */,
 				1F74CA962784354300DC5B4B /* Endpoint.swift */,
 				1FA577102785E83B0058D907 /* EndpointFactory.swift */,
 				1F94B2A72786C0930037D8BF /* ImageCacheManager.swift */,
 				1F94B2A9278711A50037D8BF /* PhotoLoader.swift */,
+				1FE7D48D27876298001737D3 /* ImageOperation.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -118,7 +122,6 @@
 				1FD3282427844187005B1150 /* PhotoInformation.swift */,
 				1F74CA99278435D600DC5B4B /* Topic.swift */,
 				1F74CA9C2784360D00DC5B4B /* SplashEndpoint.swift */,
-				1F8F31F727860D8E00C516E1 /* QueryResult.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -130,7 +133,7 @@
 				1FD3282027843FA7005B1150 /* Observable.swift */,
 				1F94B2AB278711B80037D8BF /* UIImageView+Extension.swift */,
 				1FE7D487278741B6001737D3 /* String+Extenstion.swift */,
-				1FE7D489278743D2001737D3 /* Cancelable.swift */,
+				1FE7D48B27876156001737D3 /* AsyncOperation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -299,6 +302,8 @@
 				1FD3282127843FA7005B1150 /* Observable.swift in Sources */,
 				1F94B2A42786B1770037D8BF /* QueryPhotoInformationUsecase.swift in Sources */,
 				1FAF516A278037E2009036F9 /* HomeViewController.swift in Sources */,
+				1FE7D48E27876298001737D3 /* ImageOperation.swift in Sources */,
+				1FE7D48C27876156001737D3 /* AsyncOperation.swift in Sources */,
 				1F74CA9D2784360D00DC5B4B /* SplashEndpoint.swift in Sources */,
 				1FA5770F2785E4A20058D907 /* DiscoverViewModel.swift in Sources */,
 				1F74CA9A278435D600DC5B4B /* Topic.swift in Sources */,
@@ -309,7 +314,6 @@
 				1FE7D48627873B85001737D3 /* MainTabBarController.swift in Sources */,
 				1FD3282F27858010005B1150 /* TopicPhotoInformationUsecase.swift in Sources */,
 				1F94B2AC278711B80037D8BF /* UIImageView+Extension.swift in Sources */,
-				1FE7D48A278743D2001737D3 /* Cancelable.swift in Sources */,
 				1FE7D488278741B6001737D3 /* String+Extenstion.swift in Sources */,
 				1FA5770527858D620058D907 /* TopicPhotoInformationRepository.swift in Sources */,
 				1FD3282B27849A96005B1150 /* TopicCell.swift in Sources */,

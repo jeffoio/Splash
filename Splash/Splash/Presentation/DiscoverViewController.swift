@@ -55,6 +55,7 @@ extension DiscoverViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
         self.viewModel.update(query)
+        self.searchBar.resignFirstResponder()
     }
 }
 
@@ -66,6 +67,10 @@ extension DiscoverViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let itemCount = self.photoDataSource?.snapshot().numberOfItems, indexPath.item >= itemCount-1 else { return }
         self.viewModel.query()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        PhotoLoader.shared.cancelOperation(indexPath)
     }
 }
 
@@ -91,7 +96,7 @@ private extension DiscoverViewController {
     func configureSearchBar() {
         self.searchBar.backgroundImage = UIImage()
         self.searchBar.searchTextField.textColor = UIColor(named: "splashWhite")
-        self.searchBar.resignFirstResponder()
+        self.searchBar.becomeFirstResponder()
     }
     
     func configurePhotoCollectionViewLayout() {
@@ -108,7 +113,7 @@ private extension DiscoverViewController {
     func configurePhotoDataSource() {
         self.photoDataSource = UICollectionViewDiffableDataSource<Section, PhotoInformation>(collectionView: self.photoCollectionView, cellProvider: { collectionView, indexPath, photo in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.identifider, for: indexPath) as? PhotoCell else { return PhotoCell() }
-            cell.setImage(photo)
+            cell.setImage(indexPath, photo: photo)
             return cell
         })
     }

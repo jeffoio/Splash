@@ -22,11 +22,6 @@ class HomeViewController: UIViewController {
     private var topicDataSource: UICollectionViewDiffableDataSource<Section, Topic>?
     private var photoDataSource: UICollectionViewDiffableDataSource<Section, PhotoInformation>?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configure()
-    }
-    
     init?(coder: NSCoder, viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(coder: coder)
@@ -36,8 +31,13 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.configure()
+    }
+    
     @objc func topicButtonTapped(_ sender: UIButton) {
-        guard let string = sender.currentTitle, let topic = Topic(rawValue: string) else { return }
+        guard let string = sender.currentTitle, let topic = Topic(rawValue: string.lowercased()) else { return }
         self.viewModel.update(topic)
     }
     
@@ -66,6 +66,10 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let itemCount = self.photoDataSource?.snapshot().numberOfItems, indexPath.item >= itemCount-1 else { return }
         self.viewModel.fetch()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        PhotoLoader.shared.cancelOperation(indexPath)
     }
 }
 
@@ -126,7 +130,7 @@ private extension HomeViewController {
     func configurePhotoDataSource() {
         self.photoDataSource = UICollectionViewDiffableDataSource<Section, PhotoInformation>(collectionView: self.photoCollectionView, cellProvider: { collectionView, indexPath, photo in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.identifider, for: indexPath) as? PhotoCell else { return PhotoCell() }
-            cell.setImage(photo)
+            cell.setImage(indexPath, photo: photo)
             return cell
         })
     }

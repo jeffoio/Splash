@@ -9,8 +9,6 @@ import UIKit
 
 class LargePhotoCell: UICollectionViewCell {
     static let identifider: String = String(describing: LargePhotoCell.self)
-    
-    private var task: Cancelable?
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -26,8 +24,9 @@ class LargePhotoCell: UICollectionViewCell {
         self.imageView.image = nil
     }
     
-    func setImage(_ photo: PhotoInformation) {
+    func setImage(_ indexPath: IndexPath, photo: PhotoInformation) {
         guard let url = URL(string: photo.urls.small) else { return }
-        self.task = self.imageView.setImageUrl(id: photo.id, url: url)
+        self.imageView.addBlurEffect()
+        self.imageView.setImageUrl(id: photo.id, url: url, indexPath: indexPath)
     }
 }
