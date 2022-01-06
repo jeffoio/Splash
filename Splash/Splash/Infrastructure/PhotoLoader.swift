@@ -6,17 +6,19 @@
 //
 
 import Foundation
+import UIKit
 
 final class PhotoLoader {
     static let shared = PhotoLoader()
     
     private let cache = ImageCache()
     private let queue = OperationQueue()
+    private let downQueue = OperationQueue()
     private var operations: [IndexPath: Operation] = [:]
     
     private init() { }
     
-    func download(url: URL, id: String, indexPath: IndexPath, completion: @escaping (Data) -> Void) {
+    func load(url: URL, id: String, indexPath: IndexPath, completion: @escaping (Data) -> Void) {
         if let cachedData = self.cache.load(key: id) {
             completion(cachedData)
             return
@@ -28,6 +30,14 @@ final class PhotoLoader {
         }
         self.operations[indexPath] = imageOperation
         self.queue.addOperation(imageOperation)
+    }
+    
+    func downLoad(url: URL) {
+        let imageOperation = ImageOperation(url: url) {  data in
+            guard let image = UIImage(data: data) else { return }
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+        self.downQueue.addOperation(imageOperation)
     }
     
     func cancelOperation(_ indexPath: IndexPath) {

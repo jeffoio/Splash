@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImageView {
     func setImageUrl(id: String, url: URL, indexPath: IndexPath) {
-        PhotoLoader.shared.download(url: url, id: id, indexPath: indexPath) { data in
+        PhotoLoader.shared.load(url: url, id: id, indexPath: indexPath) { data in
             DispatchQueue.main.async { [weak self] in
                 self?.image = UIImage(data: data)
                 self?.removeBlurEffect()

@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var downloadButton: UIButton!
     @IBOutlet private weak var photoCollectionView: UICollectionView!
     
     private var photoDataSource: UICollectionViewDiffableDataSource<Section, PhotoInformation>?
@@ -59,6 +60,13 @@ class DetailViewController: UIViewController {
         self.delegate?.updateCurrent(indexPath)
         self.dismiss(animated: false, completion: nil)
     }
+    
+    @IBAction func downLoad(_ sender: UIButton) {
+        let indexPath = self.photoCollectionView.indexPathsForVisibleItems[0]
+        guard let photo = self.photoDataSource?.itemIdentifier(for: indexPath),
+              let url = URL(string: photo.urls.full) else { return }
+        PhotoLoader.shared.downLoad(url: url)
+    }
 }
 
 extension DetailViewController: UICollectionViewDelegate {
@@ -69,10 +77,11 @@ extension DetailViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.isStatusBarHidden.toggle()
-        UIView.animate(withDuration: 0.3) {
-            self.setNeedsStatusBarAppearanceUpdate()
-            self.backButton.isHidden.toggle()
-            self.titleLabel.isHidden.toggle()
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.setNeedsStatusBarAppearanceUpdate()
+            self?.backButton.isHidden.toggle()
+            self?.titleLabel.isHidden.toggle()
+            self?.downloadButton.isHidden.toggle()
         }
     }
     
