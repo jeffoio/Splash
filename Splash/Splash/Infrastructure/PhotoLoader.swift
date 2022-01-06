@@ -14,10 +14,10 @@ final class PhotoLoader {
     
     private init() { }
     
-    func download(url: URL, id: String, completion: @escaping (Data) -> Void) {
+    func download(url: URL, id: String, completion: @escaping (Data) -> Void) -> Cancelable? {
         if let cachedData = self.cache.load(key: id) {
             completion(cachedData)
-            return
+            return nil
         }
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -25,7 +25,7 @@ final class PhotoLoader {
             self.cache.save(data, key: id)
             completion(data)
         }
-        
         task.resume()
+        return task
     }
 }

@@ -108,7 +108,7 @@ private extension DiscoverViewController {
     func configurePhotoDataSource() {
         self.photoDataSource = UICollectionViewDiffableDataSource<Section, PhotoInformation>(collectionView: self.photoCollectionView, cellProvider: { collectionView, indexPath, photo in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.identifider, for: indexPath) as? PhotoCell else { return PhotoCell() }
-            cell.imageView.setImageUrl(id: photo.id, url: URL(string: photo.urls.small)!)
+            cell.setImage(photo)
             return cell
         })
     }

@@ -105,7 +105,7 @@ private extension DetailViewController {
     func configurePhotoDataSource() {
         self.photoDataSource = UICollectionViewDiffableDataSource<Section, PhotoInformation>(collectionView: self.photoCollectionView, cellProvider: { collectionView, indexPath, photo in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargePhotoCell.identifider, for: indexPath) as? LargePhotoCell else { return LargePhotoCell() }
-            cell.imageView.setImageUrl(id: photo.id, url: URL(string: photo.urls.small)!)
+            cell.setImage(photo)
             return cell
         })
         

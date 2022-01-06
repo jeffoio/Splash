@@ -41,6 +41,7 @@
 		1FD3282F27858010005B1150 /* TopicPhotoInformationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3282E27858010005B1150 /* TopicPhotoInformationUsecase.swift */; };
 		1FE7D48627873B85001737D3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D48527873B85001737D3 /* MainTabBarController.swift */; };
 		1FE7D488278741B6001737D3 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D487278741B6001737D3 /* String+Extenstion.swift */; };
+		1FE7D48A278743D2001737D3 /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7D489278743D2001737D3 /* Cancelable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		1FD3282E27858010005B1150 /* TopicPhotoInformationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicPhotoInformationUsecase.swift; sourceTree = "<group>"; };
 		1FE7D48527873B85001737D3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1FE7D487278741B6001737D3 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
+		1FE7D489278743D2001737D3 /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				1FD3282027843FA7005B1150 /* Observable.swift */,
 				1F94B2AB278711B80037D8BF /* UIImageView+Extension.swift */,
 				1FE7D487278741B6001737D3 /* String+Extenstion.swift */,
+				1FE7D489278743D2001737D3 /* Cancelable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				1FE7D48627873B85001737D3 /* MainTabBarController.swift in Sources */,
 				1FD3282F27858010005B1150 /* TopicPhotoInformationUsecase.swift in Sources */,
 				1F94B2AC278711B80037D8BF /* UIImageView+Extension.swift in Sources */,
+				1FE7D48A278743D2001737D3 /* Cancelable.swift in Sources */,
 				1FE7D488278741B6001737D3 /* String+Extenstion.swift in Sources */,
 				1FA5770527858D620058D907 /* TopicPhotoInformationRepository.swift in Sources */,
 				1FD3282B27849A96005B1150 /* TopicCell.swift in Sources */,
