@@ -23,4 +23,7 @@ enum Topic: String, CaseIterable {
     var string: String {
         return self.rawValue
     }
+    var title: String {
+        return self.rawValue.capitalizingFirstLetter()
+    }
 }
