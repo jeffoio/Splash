@@ -5,7 +5,7 @@
 //  Created by TakHyun Jung on 2022/01/07.
 //
 
-import UIKit
+import Foundation
 
 final class ImageOperation: AsyncOperation {
     private var task: URLSessionDataTask?

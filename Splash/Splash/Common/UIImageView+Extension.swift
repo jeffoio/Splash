@@ -5,7 +5,7 @@
 //  Created by TakHyun Jung on 2022/01/06.
 //
 
-import UIKit
+import UIKit.UIImage
 
 extension UIImageView {
     func setImageUrl(id: String, url: URL, indexPath: IndexPath) {

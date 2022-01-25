@@ -143,11 +143,12 @@
 			children = (
 				1FA5770427858D620058D907 /* TopicPhotoInformationRepository.swift */,
 				1F94B2A52786B1AA0037D8BF /* QueryPhotoInformationRepository.swift */,
-				1F8F31F727860D8E00C516E1 /* QueryResult.swift */,
 				1F74CA9E278438DD00DC5B4B /* TransferService.swift */,
 				1F74CA932784330F00DC5B4B /* NetworkService.swift */,
+				1F8F31F727860D8E00C516E1 /* QueryResult.swift */,
 				1F74CA962784354300DC5B4B /* Endpoint.swift */,
 				1FA577102785E83B0058D907 /* EndpointFactory.swift */,
+				1F74CA9C2784360D00DC5B4B /* SplashEndpoint.swift */,
 				1F94B2A72786C0930037D8BF /* ImageCacheManager.swift */,
 				1F94B2A9278711A50037D8BF /* PhotoLoader.swift */,
 				1FE7D48D27876298001737D3 /* ImageOperation.swift */,
@@ -162,7 +163,6 @@
 				1F94B2A32786B1770037D8BF /* QueryPhotoInformationUsecase.swift */,
 				1FD3282427844187005B1150 /* PhotoInformation.swift */,
 				1F74CA99278435D600DC5B4B /* Topic.swift */,
-				1F74CA9C2784360D00DC5B4B /* SplashEndpoint.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
