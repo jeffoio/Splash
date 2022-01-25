@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()

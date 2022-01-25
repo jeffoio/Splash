@@ -85,7 +85,7 @@ private extension HomeViewController {
     }
     
     func registerNib() {
-        photoCollectionView.register(UINib(nibName: PhotoCell.identifider, bundle: nil), forCellWithReuseIdentifier: PhotoCell.identifider)
+        self.photoCollectionView.register(UINib(nibName: PhotoCell.identifider, bundle: nil), forCellWithReuseIdentifier: PhotoCell.identifider)
     }
     
     func conifigureDelegates() {

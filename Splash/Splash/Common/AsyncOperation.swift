@@ -20,12 +20,12 @@ class AsyncOperation: Operation {
     
     var state = State.ready {
         willSet {
-            self.willChangeValue(forKey: newValue.keyPath)
-            self.willChangeValue(forKey: state.keyPath)
+            self.willChangeValue(forKey: newValue.keyPath) // change to excuting
+            self.willChangeValue(forKey: state.keyPath) // 현재 상태가 변경될 것임
         }
         didSet {
-            self.didChangeValue(forKey: oldValue.keyPath)
-            self.didChangeValue(forKey: state.keyPath)
+            self.didChangeValue(forKey: oldValue.keyPath) // ready상태가 변경되었음
+            self.didChangeValue(forKey: state.keyPath) //excuting으로 변경완료
         }
     }
 

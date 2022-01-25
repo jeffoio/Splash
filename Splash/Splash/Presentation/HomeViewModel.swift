@@ -13,8 +13,8 @@ protocol TopicPhotoInformationUsecaseInterface {
 
 final class HomeViewModel {
     private let usecase: TopicPhotoInformationUsecaseInterface
-    private var currentTopic: Topic
-    private var page: Int
+    private(set) var currentTopic: Topic
+    private(set) var page: Int
     private(set) var photos: Observable<[PhotoInformation]>
     
     init(usecase: TopicPhotoInformationUsecaseInterface) {

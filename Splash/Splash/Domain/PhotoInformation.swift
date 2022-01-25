@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotoInformation: Codable, Hashable {
+struct PhotoInformation: Codable, Hashable, Equatable {
     var id: String
     var desctiption: String?
     var urls: URLs
