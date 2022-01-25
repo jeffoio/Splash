@@ -21,7 +21,7 @@ class PhotoCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.imageView.image = nil
+        self.imageView.removeBlurEffect()
     }
 
     func setImage(_ indexPath: IndexPath, photo: PhotoInformation) {
