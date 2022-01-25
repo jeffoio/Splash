@@ -14,7 +14,7 @@ final class PhotoLoader {
     private let cache = ImageCache()
     private let queue = OperationQueue()
     private let downQueue = OperationQueue()
-    private var operations: [IndexPath: Operation] = [:]
+    var operations: [IndexPath: Operation] = [:]
     
     private init() { }
     
@@ -47,5 +47,9 @@ final class PhotoLoader {
     func cancelAllOperation() {
         self.operations.forEach { $0.value.cancel() }
         self.operations = [:]
+    }
+    
+    func removeCache() {
+        self.cache.removeAll()
     }
 }

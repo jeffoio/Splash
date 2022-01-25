@@ -42,6 +42,11 @@ final class ImageCache {
     func removeAll() {
         try? FileManager.default.removeItem(at: self.diskCacheFolder)
         self.createCacheFolder()
+        self.removeMemoryCache()
+    }
+    
+    func removeMemoryCache() {
+        self.memoryCache.removeAllObjects()
     }
     
     private func createCacheFolder() {
